@@ -1,0 +1,31 @@
+{% extends 'base..html' %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block body %}
+<table class="table table-bordered">
+  <thead>
+    <tr class="bg-warning">
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+      <tbody>
+    {% for i in object_list %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+        <td><b>{{i.Name}}</b></td>
+      <td>{{i.Address|slice:"0:10"}}</td>
+      <td>{{i.Tel}}</td>
+      <td>{{i.Gst_no}}</td>
+    </tr>
+    {% endfor %}
+      </tbody>
+</table>
+{% endblock%}
+
